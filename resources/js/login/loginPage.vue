@@ -48,11 +48,12 @@
             login(){
                 axios.post('/api/login', {...this.form})
                     .then(response => {
-                        console.log(response.data.token);
-                        Cookies.set("larablogtoken", response.data.token, {expires: 1});
+                        Cookies.set("larablogtoken", response.data.token.token, {expires: 1});
+                        this.$store.commit('setUser', response.data.user);
+                        this.$router.push({path: "/blogs"})
                     })
                     .catch(err => {
-                        console.log(err.response.status);
+                        console.log(err);
                         if (err.response.status === 401) {
                             this.showCredentialsWrong = true;
                         }

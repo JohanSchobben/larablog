@@ -28,7 +28,11 @@ class RegistrationController extends Controller
             return response()->json(['error' => 'Vekeerde combinatie gebruikersnaam en wachtwoord'], 401);
         }
 
-        return $this->createNewToken($token);
+        $tokenData = $this->createNewToken($token);
+        return response()->json([
+            'token' => $tokenData,
+            'user' => auth('api')->user()
+        ],200);
     }
 
     public function logout()
@@ -40,15 +44,15 @@ class RegistrationController extends Controller
 
     public function refresh()
     {
-        return $this->createNewToken(auth('api')->refresh());
+        return response()->json($this->createNewToken(auth('api')->refresh()));
     }
 
     protected function createNewToken($token)
     {
-        return response()->json([
+        return [
             'token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
-        ]);
+        ];
     }
 }
