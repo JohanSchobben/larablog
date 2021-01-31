@@ -60,7 +60,6 @@
             submit(){
                 axios.post('/api/register', {...this.form})
                     .then(response => {
-                        console.log("OK",response);
                         this.$router.push({path: "login", query: {email: response.email, registerSuccess: true}})
                     })
                     .catch(err => {
