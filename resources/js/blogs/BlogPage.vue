@@ -1,22 +1,3 @@
 <template>
-    <div>
-        Hello world!
-    </div>
+    <div>Hello Blogs</div>
 </template>
-<script>
-    export default {
-        created(){
-            this.$store.actions.dispatch('fetchBlogs');
-        },
-        data(){
-            return {
-
-            }
-        },
-        computed:{
-            blogs(){
-                return this.$store.getters('getBlogs');
-            }
-        }
-    }
-</script>

@@ -21,3 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', [
     'uses' => 'RegistrationController@register'
 ]);
+
+Route::post('/login', [
+    'uses' => 'RegistrationController@login'
+]);
+
+Route::post('/logout', [
+    'uses' => 'RegistrationController@logout'
+]);
+
+Route::post('/refresh', [
+    'uses' => 'RegistrationController@refresh'
+]);
