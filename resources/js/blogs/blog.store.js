@@ -1,4 +1,4 @@
-import axios from "../../common/axios"
+import axios from "../common/axios"
 
 export default {
     state: {
@@ -20,7 +20,7 @@ export default {
             axios.get('/api/blogs')
                 .then(response => {
                     context.commit('setBlogs', response.data)
-                })
+                });
         }
     }
 }
