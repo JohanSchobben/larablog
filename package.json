@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "js-cookie": "^2.2.1",
+        "tiptap": "^1.32.0",
+        "tiptap-extensions": "^1.35.0",
         "vue-router": "^3.5.1",
         "vuelidate": "^0.7.6",
         "vuex": "^3.6.2"

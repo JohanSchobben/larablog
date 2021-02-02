@@ -17,4 +17,9 @@ class Blog extends Model
         "content",
         "publishDate"
     ];
+
+    public function author()
+    {
+        return $this->belongsTo('App\User', 'author');
+    }
 }

@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration
             $table->binary('content')->nullable();
             $table->date('publishDate')->nullable();
             $table->boolean('hidden')->default(true);
+            $table->integer('author');
             $table->timestamps();
         });
     }

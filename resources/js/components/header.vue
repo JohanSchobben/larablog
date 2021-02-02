@@ -7,7 +7,7 @@
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/blogs">Features</router-link>
+                    <router-link class="nav-link" to="/blogs">Blogposts</router-link>
                 </li>
             </ul>
         </div>

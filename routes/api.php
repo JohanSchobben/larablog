@@ -33,3 +33,7 @@ Route::post('/logout', [
 Route::post('/refresh', [
     'uses' => 'RegistrationController@refresh'
 ]);
+
+Route::get('/blogs',[
+    'uses' => 'BlogController@getAllBlogs'
+]);

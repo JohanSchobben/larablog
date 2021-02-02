@@ -1,5 +1,11 @@
 <template>
     <div>
-        Hello world!!!
+        <Editor/>
     </div>
 </template>
+<script>
+    import Editor from "./Editor.vue";
+    export default {
+        components: {Editor}
+    }
+</script>
